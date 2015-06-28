@@ -1,5 +1,5 @@
 {
-  "name": "Kaoi Node.js",
+  "name": "Kaoi",
   "version": "1.0.0",
   "description": "CRUD user",
   "main": "server.js",
