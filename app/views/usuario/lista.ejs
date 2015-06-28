@@ -1,0 +1,35 @@
+<% include ../toppage %>
+
+<section class="bg-primary" id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-left">
+				<% if( locals.mensagem && mensagem.tipo === "ERRO" ) { %>
+					<p><%= mensagem.texto %></p>
+				<% } %>
+				
+				<h3>Pessoas cadastradas</h3>
+				<a href="/cadastro" title="Cadastrar" class="btn btn-success"> Cadastrar </a>
+				<br/>
+				<br/>
+				<table class="table well">
+					<thead style="color:green">
+						<tr>
+							<td>Nome</td>
+							<td>Login</td>
+						</tr>
+					</thead>
+					<tbody>						
+						<% pessoas.forEach(function(pessoa) { %>						
+							<td><%= pessoa.nome %></td>
+							<td><%= pessoa.login %></td>
+						<% }); %>
+					</tbody>
+				</table>
+				<br/>
+			<a href="/" title="Voltar"  class="btn btn-warning"> Voltar </a>
+			</div>
+		</div>
+	</div>
+</section>	
+<% include ../footer %>
