@@ -8,7 +8,7 @@ module.exports = function( app ){
 				   res.render("layout");
 		},
 		lista: function(req,res){
-			Usuario.find(function(err, data){
+			Usuario.find({},function(err, data){
 				if (err){
 					console.log(err);
 				}
@@ -33,7 +33,7 @@ module.exports = function( app ){
 				response.redirect('/');
 			});
 		},
-		lista: function(req,res){
+		listaJson: function(req,res){
 			Usuario.find(function(err, data){
 				if (err){
 					console.log(err);

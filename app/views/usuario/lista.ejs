@@ -15,14 +15,16 @@
 				<table class="table well">
 					<thead style="color:green">
 						<tr>
-							<td>Nome</td>
-							<td>Login</td>
+							<th>Nome</th>
+							<th>Login</th>
 						</tr>
 					</thead>
 					<tbody>						
-						<% pessoas.forEach(function(pessoa) { %>						
-							<td><%= pessoa.nome %></td>
-							<td><%= pessoa.login %></td>
+						<% pessoas.forEach(function(pessoa) { %>
+							<tr>						
+							<td style="color:#000"><%= pessoa.nome %></td>
+							<td style="color:#000"><%= pessoa.login %></td>
+							</tr>
 						<% }); %>
 					</tbody>
 				</table>
