@@ -8,16 +8,12 @@ module.exports = function( app ){
 				   res.render("layout");
 		},
 		lista: function(req,res){
-			Usuario.find(function(err, data){
+			Usuario.find({},function(err, data){
 				if (err){
 					console.log(err);
 				}
 				res.render("usuario/lista", {pessoas: data});
-				//res.render("usuario/lista");
 			});
-		},
-		teste: function(req,res){
-				res.render("usuario/lista");
 		},
 		create: function(req,res){
 			res.render("usuario/create");
@@ -30,10 +26,11 @@ module.exports = function( app ){
 					console.log(err);
 				}
 				request.flash('info','Usuário cadastrado com sucesso!');
-				response.redirect('/');
+				//response.redirect('lista');
+				response.render('usuario/lista');
 			});
 		},
-		lista: function(req,res){
+		listaJson: function(req,res){
 			Usuario.find(function(err, data){
 				if (err){
 					console.log(err);
@@ -65,7 +62,7 @@ module.exports = function( app ){
 								console.log(err);
 							}else{
 								request.flash('info', 'Usuário atualizado com sucesso!');
-							  response.redirect('/usuarios');
+							  response.redirect('/usuariosteste');
 							}
 						});
 				}
@@ -88,7 +85,7 @@ module.exports = function( app ){
 					console.log(err);
 				}else{
 					request.flash('info', 'Usuário excluído com sucesso!');
-					response.redirect('/usuarios');
+					response.redirect('lista');
 				}
 			});
 		}

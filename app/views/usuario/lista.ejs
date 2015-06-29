@@ -15,14 +15,31 @@
 				<table class="table well">
 					<thead style="color:green">
 						<tr>
-							<td>Nome</td>
-							<td>Login</td>
+							<th>Id</th>
+							<th>Nome</th>
+							<th>CPF</th>
+							<th>Usuário</th>
+							<th>Senha</th>
+							<th>E-mail</th>
+							<th>Telefone</th>
+							<th>Opções</th>
 						</tr>
 					</thead>
 					<tbody>						
-						<% pessoas.forEach(function(pessoa) { %>						
-							<td><%= pessoa.nome %></td>
-							<td><%= pessoa.login %></td>
+						<% pessoas.forEach(function(pessoa) { %>
+							<tr style="color:#000">	
+								<td><%= pessoa._id %></td>								
+								<td><%= pessoa.nome %></td>
+								<td><%= pessoa.cpf %></td>
+								<td><%= pessoa.user %></td>
+								<td><%= pessoa.pass %></td>
+								<td><%= pessoa.email %></td>
+								<td><%= pessoa.telefone %></td>
+								<td>
+									<a href="/edit/id=<%= pessoa.id %>" title="Editar"><span class="fa fa-pencil-square-o"/></a>
+									<a href="delete/<%= pessoa.id %>" title="Excluir"><span class="fa fa-trash-o"/></a>
+								</td>
+							</tr>
 						<% }); %>
 					</tbody>
 				</table>

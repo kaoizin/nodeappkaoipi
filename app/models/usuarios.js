@@ -3,8 +3,14 @@ module.exports = function(){
   var Schema   = mongoose.Schema;
 
   var pessoa = new Schema({
-    nome: String,
+    nome:String,
+	cpf:String,
+	telefone:String,
+	email:String,
+	user:String,
+	pass:String
+	
   });
 
-  return mongoose.model('Pessoa', pessoa);
+  return mongoose.model('cadusuario', pessoa);
 }
