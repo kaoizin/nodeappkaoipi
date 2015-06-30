@@ -128,8 +128,7 @@ describe("IndexController", function() {
 		var esperado = 2.8853900817779268;	
 		expect(retorno).toEqual(esperado);
 	});
-	
-	
+
 	it("Espero receber como retorno a view calculadora/calc e o resultado 6", function() {
 		var request = { 
 						body: 
@@ -160,6 +159,22 @@ describe("IndexController", function() {
 		
 		expect(response.view).toEqual("calculadora/calc");
 		expect(response.object.resultado).toEqual(4);
+	});
+	
+	it("Espero receber como retorno a view calculadora/calc e o resultado 8", function() {
+		var request = { 
+						body: 
+							{ 
+								num1: '4',
+								num2: '2'
+							}
+						};
+		var response = criarResponse();
+		
+		IndexController.sub(request, response);
+		
+		expect(response.view).toEqual("calculadora/mult");
+		expect(response.object.resultado).toEqual(8);
 	});
 	
 });

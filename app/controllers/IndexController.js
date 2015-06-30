@@ -87,19 +87,6 @@ module.exports = function( app ) {
 				var resultado = Math.log(num1);
 				return resultado;
 			},
-			somar100aoNumero:function(num1){
-				var resultado = Number(num1);
-						resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;
-				resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;
-				resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;
-				resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;
-				resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;
-				resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;
-				resultado += 1;resultado += 1;resultado += 1;
-				resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;
-				resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;resultado += 1;
-				return resultado;
-			},
 			piNumero : function (){
 				var resultado = Math.PI;
 				return resultado;
