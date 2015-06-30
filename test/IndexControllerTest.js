@@ -203,7 +203,7 @@ describe("IndexController", function() {
 		IndexController.raiz(request, response);
 		
 		expect(response.view).toEqual("calculadora/calc");
-		expect(response.object.resultado).toEqual(3);
+		expect(response.object.resultado).toEqual(4);
 	});
 	
 });
