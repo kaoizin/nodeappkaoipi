@@ -31,11 +31,7 @@ describe("IndexController", function() {
 		var esperado = 3;		
 		expect(retorno).toEqual(esperado);
 	});
-	it("Espero ganha 100 quando passar 1", function() {
-		var retorno = IndexController.somar100aoNumero(1);
-		var esperado = 53;		
-		expect(retorno).toEqual(esperado);
-	});
+	
 	it("Espero quando passar 15 e 3 retorne 2", function() {
 		var retorno = IndexController.divNumero(15,3);
 		console.log(retorno);
@@ -133,5 +129,53 @@ describe("IndexController", function() {
 		expect(retorno).toEqual(esperado);
 	});
 	
+	
+	it("Espero receber como retorno a view calculadora/calc e o resultado 6", function() {
+		var request = { 
+						body: 
+							{ 
+								num1: '3',
+								num2: '3'
+							}
+						};
+		var response = criarResponse();
+		
+		IndexController.somar(request, response);
+		
+		expect(response.view).toEqual("calculadora/calc");
+		expect(response.object.resultado).toEqual(6);
+	});
+	
+	it("Espero receber como retorno a view calculadora/calc e o resultado 4", function() {
+		var request = { 
+						body: 
+							{ 
+								num1: '6',
+								num2: '2'
+							}
+						};
+		var response = criarResponse();
+		
+		IndexController.sub(request, response);
+		
+		expect(response.view).toEqual("calculadora/calc");
+		expect(response.object.resultado).toEqual(4);
+	});
+	
 });
+
+function criarResponse() {
+	return {
+	   view : "",
+	   object : {},
+	   
+	   render : function( view, object ) {
+		   this.view = view;
+		   this.object = object;
+	   },
+	   redirect : function( view ) {
+		   this.view = view;
+	   }
+   };	
+};
 
