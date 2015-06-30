@@ -171,10 +171,39 @@ describe("IndexController", function() {
 						};
 		var response = criarResponse();
 		
-		IndexController.sub(request, response);
+		IndexController.mult(request, response);
 		
-		expect(response.view).toEqual("calculadora/mult");
+		expect(response.view).toEqual("calculadora/calc");
 		expect(response.object.resultado).toEqual(8);
+	});
+	it("Espero receber como retorno a view calculadora/calc e o resultado 2", function() {
+		var request = { 
+						body: 
+							{ 
+								num1: '8',
+								num2: '4'
+							}
+						};
+		var response = criarResponse();
+		
+		IndexController.div(request, response);
+		
+		expect(response.view).toEqual("calculadora/calc");
+		expect(response.object.resultado).toEqual(2);
+	});
+	it("Espero receber como retorno a view calculadora/calc e o resultado 3", function() {
+		var request = { 
+						body: 
+							{ 
+								num1: '9',
+							}
+						};
+		var response = criarResponse();
+		
+		IndexController.raiz(request, response);
+		
+		expect(response.view).toEqual("calculadora/calc");
+		expect(response.object.resultado).toEqual(3);
 	});
 	
 });
