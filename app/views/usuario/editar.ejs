@@ -7,33 +7,34 @@
 					<h1> Cadastro de Usuário </h1>
 					<hr>
 					<br/>
-					<form method="POST" action="/edit/#{value._id}" role="form">
-					<div class="form-group">
-						<label> Nome: </label>
-						<input type="text" name="nome" class="form-control"/>
-					</div>
-					 <div class="form-group">
-						<label> Login: </label>
-						<input type="text", name="user", class="form-control">
-					</div>
-					<div class="form-group">
-						<label> Senha: </label>
-						<input type="password", name="pass", class="form-control"/>
-					</div>
-					<div class="form-group">
-						<label> Senha: </label>
-						<input type="password", name="cpf", class="form-control"/>
-					</div>
-					<div class="form-group">
-						<label> Senha: </label>
-						<input type="password", name="telefone", class="form-control"/>
-					</div>
-					<div class="form-group">
-						<label> Senha: </label>
-						<input type="password", name="email", class="form-control"/>
-					</div>
+					<form method="POST" action="/edit/<%= pessoa.id %>	" role="form">
+							<input type="hidden" name="id" value="<%= pessoa.id %>" />
+							<div class="form-group">
+								<label> Nome: </label>
+								<input type="text" name="nome" class="form-control" value="<%= pessoa.nome %>"/>
+							</div>
+							 <div class="form-group">
+								<label> User: </label>
+								<input type="text", name="user", class="form-control" value="<%= pessoa.user %>">
+							</div>
+							<div class="form-group">
+								<label> Pass: </label>
+								<input type="password", name="pass", class="form-control" value="<%= pessoa.pass %>"/>
+							</div>
+							<div class="form-group">
+								<label> Cpf: </label>
+								<input type="password", name="cpf", class="form-control" value="<%= pessoa.cpf %>"/>
+							</div>
+							<div class="form-group">
+								<label> Telefone: </label>
+								<input type="password", name="telefone", class="form-control" value="<%= pessoa.telefone %>"/>
+							</div>
+							<div class="form-group">
+								<label> Email: </label>
+								<input type="password", name="email", class="form-control" value="<%= pessoa.email %>"/>
+							</div>
 					<br/>
-						<input type="submit" value="Salvar" class="btn btn-success">
+						<input type="submit" value="Atualizar" class="btn btn-success">
 					<br/>
 					<br/>
 					<a href="/" title="Voltar"  class="btn btn-warning"> Voltar </a>

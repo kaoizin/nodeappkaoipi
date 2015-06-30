@@ -11,6 +11,7 @@ http.createServer( app ).listen( config.port, function() {
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/nodeapppikaoi', function(err){
+//mongoose.connect('mongodb://kaoizin:Felipe16@ds047732.mongolab.com:47732/nodeappkaoipi', function(err){
   if (err){
     console.log('Erro ao conectar no mongodb: '+err);
   }else{

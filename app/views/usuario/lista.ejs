@@ -1,6 +1,6 @@
 <% include ../toppage %>
 
-<section class="bg-primary" id="about">
+<section class="bg-primary" id="listar">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 text-left">
@@ -36,8 +36,8 @@
 								<td><%= pessoa.email %></td>
 								<td><%= pessoa.telefone %></td>
 								<td>
-									<a href="/edit/id=<%= pessoa.id %>" title="Editar"><span class="fa fa-pencil-square-o"/></a>
-									<a href="delete/<%= pessoa.id %>" title="Excluir"><span class="fa fa-trash-o"/></a>
+									<a href="edit/<%= pessoa.id %>" title="Editar"><span class="fa-2x fa fa-pencil-square-o"/></a>
+									<a href="delete/<%= pessoa.id %>" title="Excluir"><span class="fa-2x fa fa-trash-o"/></a>
 								</td>
 							</tr>
 						<% }); %>

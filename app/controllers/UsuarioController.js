@@ -1,7 +1,6 @@
 module.exports = function( app ){
 
-	var Usuario = app.models.usuarios;
-	
+	var Usuario = app.models.usuarios;	
 
 	var UsuarioController = {
 		layout : function(req, res){
@@ -25,9 +24,7 @@ module.exports = function( app ){
 				if(err){
 					console.log(err);
 				}
-				request.flash('info','Usuário cadastrado com sucesso!');
-				//response.redirect('lista');
-				response.render('usuario/lista');
+				//response.redirect('/lista');
 			});
 		},
 		listaJson: function(req,res){
@@ -44,7 +41,7 @@ module.exports = function( app ){
 				if(err){
 					console.log(err);
 				}else{
-						response.render('/editar', {value: data});
+						response.render('usuario/editar', {value: data});
 				}
 			});
 		},
@@ -54,15 +51,18 @@ module.exports = function( app ){
 				if(err){
 					console.log(err);
 				}else{
-						var model   = data;
-						model.nome  = request.body.nome;
-						model.login = request.body.login;
+						var model  = data;
+						model.nome = request.body.nome;
+						model.user = request.body.user;
+						model.pass = request.body.pass;
+						model.cpf  = request.body.cpf;
+						model.telefone = request.body.telefone;
+						model.email = request.body.email;
 						model.save(function(err){
 							if(err){
 								console.log(err);
 							}else{
-								request.flash('info', 'Usuário atualizado com sucesso!');
-							  response.redirect('/usuariosteste');
+							  response.redirect('/lista');
 							}
 						});
 				}
@@ -84,9 +84,8 @@ module.exports = function( app ){
 				if (err){
 					console.log(err);
 				}else{
-					
-					request.flash('info', 'Usuário excluído com sucesso!');
 					//response.redirect('lista');
+					response.render('usuario/lista');
 				}
 				
 			});
