@@ -203,7 +203,22 @@ describe("IndexController", function() {
 		IndexController.raiz(request, response);
 		
 		expect(response.view).toEqual("calculadora/calc");
-		expect(response.object.resultado).toEqual(4);
+		expect(response.object.resultado).toEqual(3);
+	});
+	it("Espero receber como retorno a view calculadora/calc e o resultado 2*3", function() {
+		var request = { 
+						body: 
+							{ 
+								num1: '2',
+								num2: '3'
+							}
+						};
+		var response = criarResponse();
+		
+		IndexController.pow(request, response);
+		
+		expect(response.view).toEqual("calculadora/calc");
+		expect(response.object.resultado).toEqual(8);
 	});
 	
 });
