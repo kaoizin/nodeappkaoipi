@@ -10,7 +10,11 @@ http.createServer( app ).listen( config.port, function() {
 
 var mongoose = require('mongoose');
 
+<<<<<<< HEAD
 mongoose.connect('mongodb://localhost/nodeapppikaoi', function(err){
+=======
+mongoose.connect('mongodb://kaoi7periodo:kaoi7periodo@ds041651.mongolab.com:41651/nodeapppikaoi', function(err){
+>>>>>>> 6397c4541f52e823966a6cd474b65acbf7e74cae
   if (err){
     console.log('Erro ao conectar no mongodb: '+err);
   }else{
