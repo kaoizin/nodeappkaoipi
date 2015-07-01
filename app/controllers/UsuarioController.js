@@ -24,6 +24,12 @@ module.exports = function( app ){
 				if(err){
 					console.log(err);
 				}
+				Usuario.find({},function(err, data){
+				if (err){
+					console.log(err);
+				}
+				res.render("usuario/lista", {pessoas: data});
+				});
 				//response.redirect('/lista');
 			});
 		},
@@ -41,7 +47,7 @@ module.exports = function( app ){
 				if(err){
 					console.log(err);
 				}else{
-						response.render('usuario/editar', {value: data});
+						response.render('usuario/editar', {pessoa: data});
 				}
 			});
 		},
@@ -86,8 +92,7 @@ module.exports = function( app ){
 				}else{
 					//response.redirect('lista');
 					response.render('usuario/lista');
-				}
-				
+				}				
 			});
 		}
 	}

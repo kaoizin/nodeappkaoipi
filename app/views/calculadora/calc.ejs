@@ -24,15 +24,15 @@
                     <h3> Calculadora <span class="fa-3x fa fa-calculator"/> </h3>
                     <div class="tabbable">
                         <!-- Only required for left/right tabs -->
-                        <ul class="nav nav-tabs">
-							<li class="tab-pane"><a href="#tab1" data-toggle="tab" style="color:#000">Somar <span class="fa-1x fa fa-plus"/></a></li>
-							<li class="tab-pane"><a href="#tab2" data-toggle="tab" style="color:#000">Subtrair <span class="fa-1x fa fa-minus"/></a></li>
-							<li class="tab-pane"><a href="#tab3" data-toggle="tab" style="color:#000">Multiplicar <span class="fa-1x fa fa-times"/></a></li>
-							<li class="tab-pane"><a href="#tab4" data-toggle="tab" style="color:#000">Dividir <span class="fa-1x fa fa-info"/></a></li>
-							<li class="tab-pane"><a href="#tab5" data-toggle="tab" style="color:#000">Raiz <span class="fa-1x fa fa-info"/></a></li>
-							<li class="tab-pane"><a href="#tab6" data-toggle="tab" style="color:#000">Log <span class="fa-1x fa fa-info"/></a></li>
-							<li class="tab-pane"><a href="#tab7" data-toggle="tab" style="color:#000">Potencia <span class="fa-1x fa fa-info"/></a></li>
-                        </ul>
+                      <ul class="nav nav-tabs">
+						<li class="tab-pane"><a href="#tab1" id="tabSoma" data-toggle="tab" style="color:#000">Somar <span class="fa-1x fa fa-plus"/></a></li>
+						<li class="tab-pane"><a href="#tab2" id="tabSub" data-toggle="tab" style="color:#000">Subtrair <span class="fa-1x fa fa-minus"/></a></li>
+						<li class="tab-pane"><a href="#tab3" id="tabMult" data-toggle="tab" style="color:#000">Multiplicar <span class="fa-1x fa fa-times"/></a></li>
+						<li class="tab-pane"><a href="#tab4" id="tabDiv" data-toggle="tab" style="color:#000">Dividir <span class="fa-1x fa fa-info"/></a></li>
+						<li class="tab-pane"><a href="#tab5" id="tabRaiz" data-toggle="tab" style="color:#000">Raiz <span class="fa-1x fa fa-info"/></a></li>
+						<li class="tab-pane"><a href="#tab6" id="tabLog" data-toggle="tab" style="color:#000">Log <span class="fa-1x fa fa-info"/></a></li>
+						<li class="tab-pane"><a href="#tab7" id="tabPow" data-toggle="tab" style="color:#000">Potencia <span class="fa-1x fa fa-info"/></a></li>
+                      </ul>
                         <div class="tab-content">
                             <div class="tab-pane" id="tab1">
                                 <!-- rota \/    -->
@@ -41,26 +41,27 @@
                                     <input name="num1" id="num1" type="text" onkeypress="return isNumberKey(event);" class="form-control" />
                                     <label>Numero 2</label>
                                     <input name="num2" id="num2" type="text" onkeypress="return isNumberKey(event);" class="form-control " />
-                                    <input type="submit" class="btn btn-default" value="Somar" />
+                                    <input type="submit" id="buttonSoma" class="btn btn-default" value="Somar" />
+									
 								</form>
                             </div>
                             <div class="tab-pane" id="tab2">
                                 <!-- rota \/    -->
                                 <form action="subtrair" method="POST">
                                     <label>Numero 1</label>
-                                    <input name="num1" id="num1" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
+                                    <input name="num1" id="num3" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
                                     <label>Numero 2</label>
-                                    <input name="num2" id="num2" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
-                                    <input type="submit" class="btn btn-default" value="Somar"  />
+                                    <input name="num2" id="num4" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
+                                    <input type="submit" id="buttonSub" class="btn btn-default" value="Somar"  />
 								</form>
                             </div>
                             <div class="tab-pane" id="tab3">
                                 <form action="multiplicar" method="POST">
                                     <label>Numero 1</label>
-                                    <input name="num1" id="num1"  type="text" onkeypress="return isNumberKey(event);" class="form-control" />
+                                    <input name="num1" id="num5"  type="text" onkeypress="return isNumberKey(event);" class="form-control" />
                                     <label>Numero 2</label>
-                                    <input name="num2" id="num2" type="text" onkeypress="return isNumberKey(event);" class="form-control " />
-                                    <input type="submit" class="btn btn-default" value="Multiplicar" />
+                                    <input name="num2" id="num6" type="text" onkeypress="return isNumberKey(event);" class="form-control " />
+                                    <input type="submit" id="buttonMult" class="btn btn-default" value="Multiplicar" />
                                 </form>
                             </div>
                             <div class="tab-pane" id="tab4">
@@ -69,17 +70,17 @@
                                     <input name="num1" id="div0" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
                                     <br />
                                     <label>Numero 2</label>
-                                    <input name="num2" id="num2" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
+                                    <input name="num2" id="num7" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
                                     <br />
-                                    <input type="submit" class="btn btn-default" value="Dividir" onclick="return validarDiv();" />
+                                    <input type="submit" id="buttonDiv" class="btn btn-default" value="Dividir" onclick="return validarDiv();" />
                                 </form>
                             </div>
 							<div class="tab-pane" id="tab5">
                                 <form action="raiz" method="POST">
                                     <label>Raiz de:</label>
-                                    <input name="num1" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
+                                    <input name="num1" id="num8" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
                                     <br />
-                                    <input type="submit" class="btn btn-default" value="Gerar Raiz" />
+                                    <input type="submit" id="buttonRaiz" class="btn btn-default" value="Gerar Raiz" />
                                 </form>
                             </div>
 							<div class="tab-pane" id="tab6">
@@ -93,22 +94,20 @@
 							<div class="tab-pane" id="tab7">
                                 <form action="pow" method="POST">
                                     <label>Base</label>
-                                    <input name="num1" id="div0" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
+                                    <input name="num1" id="num9" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
                                     <br />
                                     <label>Expoente</label>
-                                    <input name="num2" id="num2" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
+                                    <input name="num2" id="num10" type="text" onkeypress="return isNumberKey(event);" class="form-control"/>
                                     <br />
-                                    <input type="submit" class="btn btn-default" value="Gerar Potencia" />
+                                    <input type="submit" id="buttonPow" class="btn btn-default" value="Gerar Potencia" />
                                 </form>
                             </div>
                            
                         </div>
 						
-						 <p>
-                                <% if(locals.resultado) {%>
-                                    Resultado : <%= resultado %>
-                                        <% } %>
-                          </p>
+						 <% if(typeof(resultado) != 'undefined') { %>
+							Resultado <p id = "result"><%= resultado %></p>
+						<% } %>
                     </div>
             </div>
         </div>
